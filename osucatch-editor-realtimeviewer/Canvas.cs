@@ -254,9 +254,8 @@ namespace osucatch_editor_realtimeviewer
         private static void DrawCircle(Texture2D? texture, Vector2 pos, float diameter, bool isHyperDash, bool isSelected)
         {
             if (texture == null) return;
-            Color color = (isHyperDash) ? Color.Red : Color.White;
-            texture.Draw(pos, diameter, diameter, new Vector2(diameter * 0.5f), color);
-            if (isSelected) DrawSelectedCircle(texture, pos, diameter);
+            Color circleColor = Color.White;
+            DrawCircleWithCircleColor(texture, pos, diameter, circleColor, isHyperDash, isSelected);
         }
 
         public static void DrawFruit(Vector2 pos, float circleDiameter, Color color, bool withCircleColor, bool isHyperDash, bool isSelected)
